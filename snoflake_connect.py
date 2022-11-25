@@ -1,5 +1,5 @@
 import streamlit as st
-import snowflake
+
 import snowflake.connector
 
 # Initialize connection.
