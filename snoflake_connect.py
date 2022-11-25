@@ -1,5 +1,6 @@
 import streamlit as st
-
+import numpy as np
+import pandas as pd
 import snowflake.connector
 
 # Initialize connection.
@@ -21,7 +22,10 @@ def run_query(query):
         return cur.fetchall()
 
 rows = run_query("SELECT * from IRIS_NEW;")
-st.table(rows)
+df = pd.DataFrame(
+    rows,
+    columns=('col %d' % i for i in range(4)))
+st.table(df)
 # Print results.
 #for row in rows:
     #st.write(f"{row[0]} has a :{row[1]}:")
