@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import snowflake.connector
 
+st.header("Article header")
+
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
@@ -22,10 +24,8 @@ def run_query(query):
         return cur.fetchall()
 
 rows = run_query("SELECT * from IRIS_NEW;")
-df = pd.DataFrame(
-    rows,
-    columns=('col %d' % i for i in range(4)))
-st.table(df)
+
+st.table(rows)
 # Print results.
 #for row in rows:
     #st.write(f"{row[0]} has a :{row[1]}:")
