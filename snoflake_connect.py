@@ -24,9 +24,9 @@ def run_query(query):
         return cur.fetchall()
 
 rows = run_query("SELECT * from IRIS;")
-
+st.header("query run")
 #st.table(rows)
 # Print results.
 for row in rows:
     st.write(f"{row[0]} has a :{row[1]}:")
-    
+    st.header("print result")
