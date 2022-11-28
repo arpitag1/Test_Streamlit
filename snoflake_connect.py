@@ -25,8 +25,8 @@ def run_query(query):
 
 rows = run_query("SELECT * from IRIS;")
 
-st.table(rows)
+#st.table(rows)
 # Print results.
-#for row in rows:
-    #st.write(f"{row[0]} has a :{row[1]}:")
+for row in rows:
+    st.write(f"{row[0]} has a :{row[1]}:")
     
