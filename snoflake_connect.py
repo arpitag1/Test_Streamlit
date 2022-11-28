@@ -23,7 +23,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from IRIS_NEW;")
+rows = run_query("SELECT * from IRIS;")
 
 st.table(rows)
 # Print results.
